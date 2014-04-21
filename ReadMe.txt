@@ -1,0 +1,16 @@
+This is a simple file listing of a dirrectory through HTML5 QT5 ( nice double 5 )
+
+the file listing is made in the controleur
+and reexposed through javascript to make is simplier to set the styles dir and files are separated
+
+Lima.listFiles(entry);
+Lima.listDirs(entry);
+
+we have a Widget simplywidget
+
+creating a view
+     set up the basic size scrollbar etc
+     set up the slot used as a bridge to expose Lima javascript functions
+
+creating webview
+     additionnal setting could be added here

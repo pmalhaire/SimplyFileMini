@@ -21,7 +21,8 @@ OTHER_FILES += \
     html/images/directory.png \
     html/images/file.png \
     html/css/fileTree.css \
-    html/js/scripts.js
+    html/js/scripts.js \
+    ReadMe.txt
 
 
 FORMS +=
