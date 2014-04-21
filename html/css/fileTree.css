@@ -1,0 +1,21 @@
+ul.fileTree {
+	font-family: Verdana, sans-serif;
+	font-size: 11px;
+	line-height: 18px;
+	padding: 0px;
+	margin: 0px;
+}
+
+ul.fileTree li{
+	list-style: none;
+	padding: 0px;
+	padding-left: 20px;
+	margin: 0px;
+	white-space: nowrap;
+}
+
+
+/* Core Styles */
+.fileTree li.directory { background: url(../images/directory.png) left top no-repeat; }
+.fileTree li.file { background: url(../images/file.png) left top no-repeat; }
+
