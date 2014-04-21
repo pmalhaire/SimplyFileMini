@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>html/index.html</file>
+        <file>html/css/fileTree.css</file>
+        <file>html/images/directory.png</file>
+        <file>html/images/file.png</file>
+        <file>html/js/scripts.js</file>
+    </qresource>
+</RCC>

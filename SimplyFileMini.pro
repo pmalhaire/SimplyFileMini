@@ -33,3 +33,6 @@ HEADERS += \
     controleur.h \
 
 RC_ICONS = lima.ico
+
+RESOURCES += \
+    htmlRessources.qrc

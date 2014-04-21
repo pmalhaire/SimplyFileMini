@@ -18,7 +18,7 @@ signals:
 public slots:
 
 public:
-    SimplyView* m_SimplyView;
+    SimplyView* m_pSimplyView;
 };
 
 #endif // SIMPLYWIDGET_H

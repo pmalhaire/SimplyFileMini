@@ -22,8 +22,8 @@ int main(int argc, char **argv)
    QString fileName("html/index.html");
    //to avoid make function a bit anoying since it adds unwanted include
    QUrl url = QUrl::fromLocalFile(QFileInfo(fileName).absoluteFilePath());
-   appView.m_SimplyView->m_SimplyWeb->setUrl(url);
-   appView.m_SimplyView->m_SimplyWeb->load(url);
+   appView.m_pSimplyView->m_pSimplyWeb->setUrl(url);
+   appView.m_pSimplyView->m_pSimplyWeb->load(url);
 
    appView.show();
    return app.exec();

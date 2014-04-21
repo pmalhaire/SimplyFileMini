@@ -10,24 +10,25 @@ class SimplyView : public QGraphicsView
     Q_OBJECT
 public:
     explicit SimplyView(QWidget *parent = 0);
+        void resizeEvent(QResizeEvent *event);
     ~SimplyView();
 signals:
 
 public slots:
     void quit();
     //list files in a dir (excluding dirs)
-    QVariantList listFiles(QString sDir);
+    QVariantList listFiles(QString isDir);
     //list dir in a dir (excluding files)
-    QVariantList listDirs(QString sDir);
+    QVariantList listDirs(QString isDir);
 
 private slots:
-    void addToJavaScript();
+    void _addToJavaScript();
 
 signals:
     void quitRequested();
 
 public:
-        SimplyWeb *m_SimplyWeb;
+        SimplyWeb *m_pSimplyWeb;
 };
 
 #endif // SIMPLYVIEW_H

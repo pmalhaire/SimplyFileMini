@@ -4,20 +4,20 @@
 #include <QDirIterator>
 #include <QtCore>
 
-QStringList * Controleur::listDirs(QString sDir)
+QStringList * Controleur::listDirs(QString isDir)
 {
 
     //   # chdir() to user requested dir (root + "/" + dir)
     // Dir.chdir(File.expand_path(path).untaint);
-    QStringList * result = new QStringList();
-    QDirIterator dirIt(sDir,
+    QStringList * pResult = new QStringList();
+    QDirIterator dirIt(isDir,
                        QStringList() << "*",
                        QDir::NoSymLinks | QDir::Dirs | QDir::NoDotAndDotDot
                        );
     if(!dirIt.hasNext())
     {
-        delete result;
-        result=NULL;
+        delete pResult;
+        pResult=NULL;
         return NULL;
     }
 
@@ -25,31 +25,31 @@ QStringList * Controleur::listDirs(QString sDir)
         dirIt.next();
         if (QFileInfo(dirIt.filePath()).isDir())
         {
-            result->append(dirIt.fileName());
+            pResult->append(dirIt.fileName());
         }
     }
-    return result;
+    return pResult;
 }
 
 
-QStringList * Controleur::listFiles(QString sDir){
-    QStringList * result = new QStringList();
-    QDirIterator fileIt(sDir,
+QStringList * Controleur::listFiles(QString isDir){
+    QStringList * pResult = new QStringList();
+    QDirIterator fileIt(isDir,
                         QStringList() << "*",
                         QDir::NoSymLinks | QDir::Files | QDir::NoDotAndDotDot
                         );
     if(!fileIt.hasNext())
     {
-        delete result;
-        result=NULL;
+        delete pResult;
+        pResult=NULL;
         return NULL;
     }
     while (fileIt.hasNext()) {
         fileIt.next();
         if (QFileInfo(fileIt.filePath()).isFile())
         {
-            result->append(fileIt.fileName());
+            pResult->append(fileIt.fileName());
         }
     }
-    return result;
+    return pResult;
 }

@@ -4,11 +4,11 @@
 
 SimplyWidget::SimplyWidget(QWidget *parent)
     : QWidget(parent)
-    , m_SimplyView(new SimplyView(this))
+    , m_pSimplyView(new SimplyView(this))
 {
-    connect(m_SimplyView, SIGNAL(quitRequested()), SLOT(close()));
+    connect(m_pSimplyView, SIGNAL(quitRequested()), SLOT(close()));
     QVBoxLayout *layout = new QVBoxLayout;
-    layout->addWidget(m_SimplyView);
+    layout->addWidget(m_pSimplyView);
     layout->setMargin(0);
     setLayout(layout);
 }
@@ -16,5 +16,5 @@ SimplyWidget::SimplyWidget(QWidget *parent)
 
 
 SimplyWidget::~SimplyWidget(){
-    delete m_SimplyView;
+    delete m_pSimplyView;
 }
