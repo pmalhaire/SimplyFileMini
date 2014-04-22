@@ -7,8 +7,7 @@
 QStringList * Controleur::listDirs(QString isDir)
 {
 
-    //   # chdir() to user requested dir (root + "/" + dir)
-    // Dir.chdir(File.expand_path(path).untaint);
+    //returns a pointer best would be a reference
     QStringList * pResult = new QStringList();
     QDirIterator dirIt(isDir,
                        QStringList() << "*",
