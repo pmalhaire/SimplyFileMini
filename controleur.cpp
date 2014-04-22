@@ -13,7 +13,7 @@ QStringList * Controleur::listDirs(QString isDir)
                        QStringList() << "*",
                        QDir::NoSymLinks | QDir::Dirs | QDir::NoDotAndDotDot
                        );
-    if(!dirIt.hasNext())
+    if(!dirIt.hasNext() && NULL != pResult)
     {
         delete pResult;
         pResult=NULL;
@@ -37,7 +37,7 @@ QStringList * Controleur::listFiles(QString isDir){
                         QStringList() << "*",
                         QDir::NoSymLinks | QDir::Files | QDir::NoDotAndDotDot
                         );
-    if(!fileIt.hasNext())
+    if(!fileIt.hasNext() && NULL != pResult)
     {
         delete pResult;
         pResult=NULL;
