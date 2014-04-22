@@ -9,11 +9,11 @@ namespace Controleur
 {
 
     //list files in a dir (excluding dirs)
-    //QStringList must be deleted by caller
-    QStringList * listFiles(QString isDir);
+    // returns -1 if not accessible
+    bool listFiles(QString isDir, QStringList &ioFileList);
     //list dir in a dir (excluding files)
-    //QStringList must be deleted by caller
-    QStringList * listDirs(QString isDir);
+    // returns -1 if not accessible
+    bool listDirs(QString isDir, QStringList &ioDirList);
 }
 
 #endif // CONTROLEUR_H

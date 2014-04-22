@@ -4,51 +4,45 @@
 #include <QDirIterator>
 #include <QtCore>
 
-QStringList * Controleur::listDirs(QString isDir)
+bool Controleur::listDirs(QString isDir, QStringList &ioDirList)
 {
-
-    //returns a pointer best would be a reference
-    QStringList * pResult = new QStringList();
-    QDirIterator dirIt(isDir,
-                       QStringList() << "*",
-                       QDir::NoSymLinks | QDir::Dirs | QDir::NoDotAndDotDot
-                       );
-    if(!dirIt.hasNext() && NULL != pResult)
-    {
-        delete pResult;
-        pResult=NULL;
-        return NULL;
-    }
-
-    while (dirIt.hasNext()) {
-        dirIt.next();
-        if (QFileInfo(dirIt.filePath()).isDir())
-        {
-            pResult->append(dirIt.fileName());
+    try{
+        QDirIterator dirIt(isDir,
+                            QStringList() << "*",
+                            QDir::NoSymLinks | QDir::Dirs | QDir::NoDotAndDotDot
+                            );
+        while (dirIt.hasNext()) {
+            dirIt.next();
+            if (QFileInfo(dirIt.filePath()).isDir())
+            {
+                ioDirList.append(dirIt.fileName());
+            }
         }
+    }catch (QException &e){
+        QDebug() << e.what();
+        return false;
     }
-    return pResult;
+
+    return true;
 }
 
 
-QStringList * Controleur::listFiles(QString isDir){
-    QStringList * pResult = new QStringList();
-    QDirIterator fileIt(isDir,
-                        QStringList() << "*",
-                        QDir::NoSymLinks | QDir::Files | QDir::NoDotAndDotDot
-                        );
-    if(!fileIt.hasNext() && NULL != pResult)
-    {
-        delete pResult;
-        pResult=NULL;
-        return NULL;
-    }
-    while (fileIt.hasNext()) {
-        fileIt.next();
-        if (QFileInfo(fileIt.filePath()).isFile())
-        {
-            pResult->append(fileIt.fileName());
+bool Controleur::listFiles(QString isDir, QStringList &ioFileList){
+    try{
+        QDirIterator fileIt(isDir,
+                             QStringList() << "*",
+                             QDir::NoSymLinks | QDir::Files | QDir::NoDotAndDotDot
+                             );
+        while (fileIt.hasNext()) {
+            fileIt.next();
+            if (QFileInfo(fileIt.filePath()).isFile())
+            {
+                ioFileList.append(fileIt.fileName());
+            }
         }
+    }catch (QException &e){
+        QDebug() << e.what();
+        return false;
     }
-    return pResult;
+    return true;
 }
