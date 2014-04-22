@@ -3,6 +3,7 @@
 #include <QFileInfo>
 #include <QDirIterator>
 #include <QtCore>
+#include <QDebug>
 
 bool Controleur::listDirs(QString isDir, QStringList &ioDirList)
 {
@@ -19,7 +20,7 @@ bool Controleur::listDirs(QString isDir, QStringList &ioDirList)
             }
         }
     }catch (QException &e){
-        QDebug() << e.what();
+        qDebug() << e.what();
         return false;
     }
 
@@ -41,7 +42,7 @@ bool Controleur::listFiles(QString isDir, QStringList &ioFileList){
             }
         }
     }catch (QException &e){
-        QDebug() << e.what();
+        qDebug() << e.what();
         return false;
     }
     return true;
