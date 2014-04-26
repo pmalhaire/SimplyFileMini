@@ -10,7 +10,7 @@ we have a Widget simplywidget
 
 creating a view
      set up the basic size scrollbar etc
-     set up the slot used as a bridge to expose Lima javascript functions
+     set up the slot used as a bridge to expose CppTojs javascript functions
 
 creating webview
      additionnal setting could be added here
