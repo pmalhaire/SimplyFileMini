@@ -9,8 +9,8 @@ window.onload = function () {
         document.getElementById("list_id").disabled = true;
 
 
-        listFiles = Lima.listFiles(entry);
-        listDirs = Lima.listDirs(entry);
+        listFiles = CppToJs.listFiles(entry);
+        listDirs = CppToJs.listDirs(entry);
 
         if (listDirs) {
             for (var i = 0; i < listDirs.length; i++) {
@@ -33,7 +33,7 @@ window.onload = function () {
         delete listFiles;
     };
     document.getElementById("exit_id").onclick = function () {
-        Lima.quit();
+        CppToJs.quit();
     };
 }
 

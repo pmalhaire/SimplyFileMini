@@ -73,5 +73,5 @@ QVariantList SimplyView::listDirs(QString isDir)
 
 void SimplyView::_addToJavaScript()
 {
-    m_pSimplyWeb->page()->mainFrame()->addToJavaScriptWindowObject("Lima", this);
+    m_pSimplyWeb->page()->mainFrame()->addToJavaScriptWindowObject("CppToJs", this);
 }
