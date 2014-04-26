@@ -1,10 +1,10 @@
-This is a simple file listing of a dirrectory through HTML5 QT5 ( nice double 5 )
+This is a simple file browser of a dirrectory through HTML5 QT5 ( nice double 5 )
 
 the file listing is made in the controleur
 and reexposed through javascript to make is simplier to set the styles dir and files are separated
 
-Lima.listFiles(entry);
-Lima.listDirs(entry);
+CppTojs.listFiles(entry);
+CppTojs.listDirs(entry);
 
 we have a Widget simplywidget
 
